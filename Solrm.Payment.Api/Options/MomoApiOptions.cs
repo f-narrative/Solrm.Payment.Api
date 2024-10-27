@@ -6,8 +6,6 @@ public class MomoApiOptions
 
     public Uri BaseUrl { get; set; }
 
-    public string AccessToken { get; set; }
-
     public string ApiUser { get; set; }
 
     public string ApiKey { get; set; }
