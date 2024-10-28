@@ -17,7 +17,7 @@ public class MomoDelegatingHandler(IOptions<MomoApiOptions> momoApiOptions) : De
         CancellationToken cancellationToken)
     {
         var result = await base.SendAsync(request, cancellationToken);
-        if (result is not { IsSuccessStatusCode: false, StatusCode: HttpStatusCode.Unauthorized}) return result;
+        if (result is not { IsSuccessStatusCode: false }) return result;
         
         var getNewAccessTokenUrl = $"{_momoApiOptions.BaseUrl}/collection/token/";
         var httpClient = new HttpClient();
